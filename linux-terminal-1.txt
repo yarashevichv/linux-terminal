@@ -1,0 +1,85 @@
+Linux terminal (GitBash) commands
+
+1) Посмотреть где я:
+pwd
+
+2) Создать папку:
+mkdir f0
+
+3) Зайти в папку:
+cd f0
+
+4) Создать 3 папки:
+mkdir f1 f2 f3
+
+5) Зайти в любую папку:
+cd f1
+
+6) Создать 5 файлов (3 txt, 2 json):
+touch file{1..3}.txt file{4..5}.json
+
+7) Создать 3 папки:
+mkdir i_f{1..3}
+
+8) Вывести список содержимого папки
+ls
+
+9) Открыть любой txt файл
+vim file1.txt
+
+10) Написать туда что-нибудь, любой текст
+iWrite something
+
+11) Сохранить и выйти
+[Press <Esc>] :wq
+or
+[Press <Esc>] :x
+
+12) Выйти из папки на уровень выше
+cd ..
+
+13) Переместить любые 2 файла, которые вы создали, в любую другую папку.
+mv f1/file1.txt f2/
+mv f1/file2.txt f2/
+
+14) Скопировать любые 2 файла, которые вы создали, в любую другую папку.
+cp f1/file3.txt f3/
+cp f1/file4.json f3/
+
+15) Найти файл по имени
+find ./f3 -type f -name "file3*"
+
+16) Просмотреть содержимое в реальном времени (команда grep) изучите как она работает.
+tail -f f2/file1.txt
+
+17) Вывести несколько первых строк из текстового файла
+head -n 2 f2/file1.txt
+
+18) Вывести несколько последних строк из текстового файла
+tail -n 1 f2/file1.txt
+
+19) Просмотреть содержимое длинного файла (команда less) изучите как она работает.
+less f3/file4.json
+
+20) Вывести дату и время
+date
+=========
+
+1) Отправить http запрос на сервер.
+http://162.55.220.72:5005/object_info_3?name=Vadim&age=32&salary=1000
+curl "http://162.55.220.72:5005/object_info_3?name=Vadim&age=32&salary=1000"
+
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
+touch script.sh
+vim script.sh
+icd f0
+mkdir f1 f2 f3
+cd f1
+touch file1.txt file2.txt file3.txt file4.json file5.json
+mkdir i_f1 i_f2 i_f3
+ls
+mv file1.txt file2.txt ../f2/
+<Esc>
+:x<Enter>
+chmod +x script.sh
+./script.sh
